@@ -1,1 +1,12 @@
-<p>ticket works!</p>
+<label id="example-radio-group-label">Pick your flight</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group">
+  <mat-radio-button class="example-radio-button" *ngFor="let val of flightOptions" [value]="val.id">
+    From : {{val.flightDepartureID.airportName}}  To :  {{val.flightArrivalID.airportName}}   Date and Time  : {{val.flightDepartureTime}}
+  </mat-radio-button>
+  <mat-radio-button class="example-radio-button" *ngFor="let val of passengers" [value]="val.id">
+    Name : {{val.passengerName}}  Surname :  {{val.passengerSurname}}   Tel  : {{val.passengerTel}}
+  </mat-radio-button>
+</mat-radio-group>
+

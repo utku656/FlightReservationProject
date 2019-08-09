@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'airlinesbookingmanagementsystem'`, () => {
+  it(`should have as title 'airlinesbooking'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('airlinesbookingmanagementsystem');
+    expect(app.title).toEqual('airlinesbooking');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to airlinesbookingmanagementsystem!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to airlinesbooking!');
   });
 });

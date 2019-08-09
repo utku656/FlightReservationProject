@@ -2,6 +2,7 @@ package etiya.barisutku.airlinesbookingsystem.AirlinesBookingManagementSystem.Se
 
 import etiya.barisutku.airlinesbookingsystem.AirlinesBookingManagementSystem.entities.Flight;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface FlightService {
@@ -15,4 +16,6 @@ public interface FlightService {
     public void updateFlight(Long id, Flight flight);
 
     public void deleteFlight(long id);
+
+    public Flight getFlightByDateandDeparture(LocalDate flightDate,Long id , Long id2);
 }

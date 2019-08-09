@@ -2,13 +2,13 @@ package etiya.barisutku.airlinesbookingsystem.AirlinesBookingManagementSystem.Co
 
 import etiya.barisutku.airlinesbookingsystem.AirlinesBookingManagementSystem.Services.FlightService;
 import etiya.barisutku.airlinesbookingsystem.AirlinesBookingManagementSystem.entities.Flight;
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -31,6 +31,14 @@ public class FlightController {
     Flight getFlightById(@PathVariable("flightid") Long flightId) {
 
         return flightService.getFlightById(flightId);
+
+    }
+
+    @GetMapping("/{flightDate}")
+    public @ResponseBody
+    Flight getFlightByDate(@PathVariable("flightDate") LocalDate flightDate,Long id , Long id2) {
+
+        return flightService.getFlightByDateandDeparture(flightDate,id ,id2);
 
     }
     @PostMapping

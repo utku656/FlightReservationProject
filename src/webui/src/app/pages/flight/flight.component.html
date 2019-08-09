@@ -1,1 +1,79 @@
-<p>flight works!    {{flightMessage}}</p>
+<html>
+<head>
+  <title>Flight Ticket Booking Project</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
+
+
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+
+
+</head>
+<body>
+<router-outlet></router-outlet>
+
+<div class="booking-form-box">
+  <div class="radio-btn">
+    <input type="radio" class="btn" name="check" checked="checked"><span>Roundtrip</span>
+    <input type="radio" class="btn" name="check"><span>One-Way</span>
+  </div>
+  <div class="form-group">
+    <label class="badge">From</label>
+    <select  formControlName="depature-form" class="form-control" (change)="selectChangeHandlerDeparture($event)" >
+      <option *ngFor="let val of airportOptions" [value]="val.id">{{val.airportName}}</option>
+    </select>
+
+    <label class="badge">To</label>
+    <select formControlName="arrival-form" class="form-control"(change)="selectChangeHandlerArrival($event)" >
+      <option *ngFor="let val of airportOptions" [value]="val.id">{{val.airportName}}</option>
+    </select>
+
+
+
+  <div class="input-grp">
+      <label class="badge">Departure</label>
+      <input type="date" class="form-control select-date" (change)="selectChangeHandlerDepDate($event)">
+
+    </div>
+    <div class="input-grp">
+      <label class="badge">Return</label>
+      <input type="date" class="form-control select-date">
+
+    </div>
+    <div class="input-grp">
+      <label class="badge">Adults</label>
+      <input type="number" class="form-control" value="0">
+
+    </div>
+    <div class="input-grp">
+      <label class="badge">Children</label>
+      <input type="number" class="form-control" value="0">
+
+    </div>
+    <div class="input-grp">
+      <label class="badge">Travel Class</label>
+      <select class="custom-select">
+        <option value="1">Business</option>
+        <option value="1">Economy</option>
+      </select>
+
+    </div>
+    <div class="input-grp">
+
+
+      <button id="searchbutton" (click)="getFlightSearchDetails()"  routerLink="/ticket"   class="btn btn-primary flight" routerLinkActive="active">Show Flight</button>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

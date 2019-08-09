@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,9 @@ import 'rxjs/add/observable/of';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'airlinesbookingmanagementsystem';
+  title = 'airlinesbooking';
+
+  constructor() {
+
+  }
 }
